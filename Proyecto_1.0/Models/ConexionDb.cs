@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Proyecto_1._0.Models
 {
@@ -12,7 +14,7 @@ namespace Proyecto_1._0.Models
             Database.SetInitializer<ConexionDb>(new MyDbInitializer());
         }
 
-        public DbSet<UserAccount> userAccount { get; set; }
+        //public DbSet<UserAccount> userAccount { get; set; }
         public DbSet<Instituciones> instituciones { get; set; }
         public DbSet<TipoServicio> tipoServicio { get; set; }
         public DbSet<TipoTramite> tipoTramite { get; set; }
