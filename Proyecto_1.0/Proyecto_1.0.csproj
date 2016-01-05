@@ -49,6 +49,15 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\Connector.NET 6.9\Assemblies\v2.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\Connector.NET 6.9\Assemblies\v4.0\MySql.Data.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF5">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\Connector.NET 6.9\Assemblies\v4.5\MySql.Data.Entity.EF5.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -174,8 +183,16 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ConexionDb.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Instituciones.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\RequisitoDato.cs" />
+    <Compile Include="Models\RequisitoServicioTramite.cs" />
+    <Compile Include="Models\RequisitoTramiteDato.cs" />
+    <Compile Include="Models\TipoDato.cs" />
+    <Compile Include="Models\TipoServicio.cs" />
+    <Compile Include="Models\TipoTramite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
