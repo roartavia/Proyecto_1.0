@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="content/menu_dropdown_style.css">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Sistema PINTAE</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -20,30 +20,23 @@
                 </button>
                 @Html.ActionLink("PINTAE", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div id='cssmenu' class="navbar-collapse collapse">
+            <div id='cssmenu'>
                 <ul>
-                    <li><a href='#'><span>Home</span></a></li>
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li class='active has-sub'>
-                        <a href='#'><span>Products</span></a>
+                        <a href='#'><span>Información sistema</span></a>
                         <ul>
-                            <li class='has-sub'>
-                                <a href='#'><span>Product 1</span></a>
-                                <ul>
-                                    <li><a href='#'><span>Sub Product</span></a></li>
-                                    <li class='last'><a href='#'><span>Sub Product</span></a></li>
-                                </ul>
-                            </li>
-                            <li class='has-sub'>
-                                <a href='#'><span>Product 2</span></a>
-                                <ul>
-                                    <li><a href='#'><span>Sub Product</span></a></li>
-                                    <li class='last'><a href='#'><span>Sub Product</span></a></li>
-                                </ul>
-                            </li>
+                            <li>@Html.ActionLink("Instituciones", "Index", "Instituciones")</li>
+                            <li>@Html.ActionLink("Tipo Servicio", "Index", "TipoServicios")</li>   
+                            <li>@Html.ActionLink("Tipo Trámite", "Index", "TipoTramites")</li>   
+                            <li>@Html.ActionLink("Tipo Dato", "Index", "TipoDatoes")</li>   
+                            <li>@Html.ActionLink("Requisito Servicio Dato", "Index", "RequisitoDatoes")</li>   
+                            <li>@Html.ActionLink("Requisito Servicio Trámite", "Index", "RequisitoServicioTramites")</li>
+                            <li>@Html.ActionLink("Requisito Trámite Dato", "Index", "RequisitoTramiteDatoes")</li>           
                         </ul>
                     </li>
-                    <li><a href='#'><span>About</span></a></li>
-                    <li class='last'><a href='#'><span>Contact</span></a></li>
+                    <li>@Html.ActionLink("Acerca", "About", "Home")</li>
+                    <li class='last'>@Html.ActionLink("Contacto", "Contact", "Home")></li>
                 </ul>
             </div>
 
@@ -53,7 +46,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Instituto Tecnológico de Costa Rica</p>
         </footer>
     </div>
 
