@@ -181,10 +181,17 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstitucionesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RequisitoDatoesController.cs" />
+    <Compile Include="Controllers\RequisitoServicioTramitesController.cs" />
+    <Compile Include="Controllers\RequisitoTramiteDatoesController.cs" />
+    <Compile Include="Controllers\TipoDatoesController.cs" />
+    <Compile Include="Controllers\TipoServiciosController.cs" />
+    <Compile Include="Controllers\TipoTramitesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CatalogoTipoDato.cs" />
     <Compile Include="Models\ConexionDb.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Instituciones.cs" />
@@ -260,6 +267,36 @@
     <Content Include="Views\Instituciones\Details.cshtml" />
     <Content Include="Views\Instituciones\Edit.cshtml" />
     <Content Include="Views\Instituciones\Index.cshtml" />
+    <Content Include="Views\RequisitoServicioTramites\Create.cshtml" />
+    <Content Include="Views\RequisitoServicioTramites\Delete.cshtml" />
+    <Content Include="Views\RequisitoServicioTramites\Details.cshtml" />
+    <Content Include="Views\RequisitoServicioTramites\Edit.cshtml" />
+    <Content Include="Views\RequisitoServicioTramites\Index.cshtml" />
+    <Content Include="Views\TipoServicios\Create.cshtml" />
+    <Content Include="Views\TipoServicios\Delete.cshtml" />
+    <Content Include="Views\TipoServicios\Details.cshtml" />
+    <Content Include="Views\TipoServicios\Edit.cshtml" />
+    <Content Include="Views\TipoServicios\Index.cshtml" />
+    <Content Include="Views\TipoTramites\Create.cshtml" />
+    <Content Include="Views\TipoTramites\Delete.cshtml" />
+    <Content Include="Views\TipoTramites\Details.cshtml" />
+    <Content Include="Views\TipoTramites\Edit.cshtml" />
+    <Content Include="Views\TipoTramites\Index.cshtml" />
+    <Content Include="Views\RequisitoDatoes\Create.cshtml" />
+    <Content Include="Views\RequisitoDatoes\Delete.cshtml" />
+    <Content Include="Views\RequisitoDatoes\Details.cshtml" />
+    <Content Include="Views\RequisitoDatoes\Edit.cshtml" />
+    <Content Include="Views\RequisitoDatoes\Index.cshtml" />
+    <Content Include="Views\RequisitoTramiteDatoes\Create.cshtml" />
+    <Content Include="Views\RequisitoTramiteDatoes\Delete.cshtml" />
+    <Content Include="Views\RequisitoTramiteDatoes\Details.cshtml" />
+    <Content Include="Views\RequisitoTramiteDatoes\Edit.cshtml" />
+    <Content Include="Views\RequisitoTramiteDatoes\Index.cshtml" />
+    <Content Include="Views\TipoDatoes\Create.cshtml" />
+    <Content Include="Views\TipoDatoes\Delete.cshtml" />
+    <Content Include="Views\TipoDatoes\Details.cshtml" />
+    <Content Include="Views\TipoDatoes\Edit.cshtml" />
+    <Content Include="Views\TipoDatoes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

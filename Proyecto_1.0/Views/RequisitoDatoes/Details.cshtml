@@ -1,0 +1,50 @@
+﻿@model Proyecto_1._0.Models.RequisitoDato
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RequisitoDato</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoDato.nombre_dato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoDato.nombre_dato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoServicio.nombre_servicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoServicio.nombre_servicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre_req_dato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_req_dato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.es_obligatorio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.es_obligatorio)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_req_dato }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

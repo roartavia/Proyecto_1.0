@@ -1,0 +1,42 @@
+﻿@model Proyecto_1._0.Models.TipoDato
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TipoDato</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CatalogoTipoDato.nombre_tipo_dato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CatalogoTipoDato.nombre_tipo_dato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Instituciones.nombre_institucion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Instituciones.nombre_institucion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre_dato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_dato)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_dato }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

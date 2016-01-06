@@ -1,0 +1,50 @@
+﻿@model Proyecto_1._0.Models.RequisitoServicioTramite
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RequisitoServicioTramite</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoServicio.nombre_servicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoServicio.nombre_servicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoTramite.nombre_tramite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoTramite.nombre_tramite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre_req_tramite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_req_tramite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.es_obligatorio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.es_obligatorio)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_req_ser }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
