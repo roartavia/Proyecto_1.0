@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Proyecto_1._0.Models.TipoDato>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CatalogoTipoDato.nombre_tipo_dato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Instituciones.nombre_institucion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre_dato)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CatalogoTipoDato.nombre_tipo_dato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Instituciones.nombre_institucion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre_dato)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_dato }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_dato }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_dato })
+        </td>
+    </tr>
+}
+
+</table>
