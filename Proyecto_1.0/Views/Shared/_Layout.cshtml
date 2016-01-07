@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="stylesheet" href="content/menu_dropdown_style.css">
+    <title>@ViewBag.Title - Sistema PINTAE</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -19,22 +20,33 @@
                 </button>
                 @Html.ActionLink("PINTAE", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+            <div id='cssmenu'>
+                <ul>
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class='active has-sub'>
+                        <a href='#'><span>Información sistema</span></a>
+                        <ul>
+                            <li>@Html.ActionLink("Instituciones", "Index", "Instituciones")</li>
+                            <li>@Html.ActionLink("Tipo Servicio", "Index", "TipoServicios")</li>   
+                            <li>@Html.ActionLink("Tipo Trámite", "Index", "TipoTramites")</li>   
+                            <li>@Html.ActionLink("Tipo Dato", "Index", "TipoDatoes")</li>   
+                            <li>@Html.ActionLink("Requisito Servicio Dato", "Index", "RequisitoDatoes")</li>   
+                            <li>@Html.ActionLink("Requisito Servicio Trámite", "Index", "RequisitoServicioTramites")</li>
+                            <li>@Html.ActionLink("Requisito Trámite Dato", "Index", "RequisitoTramiteDatoes")</li>           
+                        </ul>
+                    </li>
                     <li>@Html.ActionLink("Acerca", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Registrar Institucion", "Index","Instituciones")</li>
+                    <li class='last'>@Html.ActionLink("Contacto", "Contact", "Home")></li>
                 </ul>
-                @Html.Partial("_LoginPartial")
             </div>
+
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Instituto Tecnológico de Costa Rica</p>
         </footer>
     </div>
 
