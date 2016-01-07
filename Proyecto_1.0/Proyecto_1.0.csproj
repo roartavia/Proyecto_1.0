@@ -181,6 +181,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstitucionesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MostrarTipoDatoesController.cs" />
     <Compile Include="Controllers\RequisitoDatoesController.cs" />
     <Compile Include="Controllers\RequisitoServicioTramitesController.cs" />
     <Compile Include="Controllers\RequisitoTramiteDatoesController.cs" />
@@ -298,6 +299,11 @@
     <Content Include="Views\TipoDatoes\Details.cshtml" />
     <Content Include="Views\TipoDatoes\Edit.cshtml" />
     <Content Include="Views\TipoDatoes\Index.cshtml" />
+    <Content Include="Views\MostrarTipoDatoes\Create.cshtml" />
+    <Content Include="Views\MostrarTipoDatoes\Delete.cshtml" />
+    <Content Include="Views\MostrarTipoDatoes\Details.cshtml" />
+    <Content Include="Views\MostrarTipoDatoes\Edit.cshtml" />
+    <Content Include="Views\MostrarTipoDatoes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
