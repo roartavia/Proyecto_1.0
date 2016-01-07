@@ -16,6 +16,7 @@ namespace Proyecto_1._0.Models
         public string nombre_req_dato { get; set; }
 
         [Required(ErrorMessage = "Se debe ingresar si es obligatorio o no")]
+        [RegularExpression("^[a-zA-Z ]*$", ErrorMessage = "No se permite el ingreso de números")]
         public string es_obligatorio { get; set; }
 
         [ForeignKey("TipoDato")]
