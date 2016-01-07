@@ -7,15 +7,15 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Nuevo", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Instituciones.nombre_institucion)
+            @Html.DisplayName("Nombre Institución")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.nombre_servicio)
+            @Html.DisplayName("Nombre Servicio")
         </th>
         <th></th>
     </tr>
@@ -29,9 +29,9 @@
             @Html.DisplayFor(modelItem => item.nombre_servicio)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_servicio }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_servicio }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_servicio })
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_servicio }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.id_servicio }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.id_servicio })
         </td>
     </tr>
 }

@@ -1,7 +1,7 @@
 ﻿@model Proyecto_1._0.Models.TipoDato
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles";
 }
 
 <h2>Details</h2>
@@ -11,7 +11,7 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.CatalogoTipoDato.nombre_tipo_dato)
+            @Html.DisplayName("Nombre Tipo Dato")
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Instituciones.nombre_institucion)
+            @Html.DisplayName("Nombre Institución")
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.nombre_dato)
+            @Html.DisplayName("Nombre Dato")
         </dt>
 
         <dd>
@@ -37,6 +37,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id_dato }) |
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id_dato }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

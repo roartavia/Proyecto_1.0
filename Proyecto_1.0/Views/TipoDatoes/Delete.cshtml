@@ -1,18 +1,18 @@
 ﻿@model Proyecto_1._0.Models.TipoDato
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Eliminar";
 }
 
 <h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Estás seguro que deseas eliminar este elemento?</h3>
 <div>
     <h4>TipoDato</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.CatalogoTipoDato.nombre_tipo_dato)
+            @Html.DisplayName("Nombre Tipo Dato")
         </dt>
 
         <dd>
@@ -20,7 +20,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Instituciones.nombre_institucion)
+            @Html.DisplayName("Nombre Institución")
         </dt>
 
         <dd>
@@ -28,7 +28,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.nombre_dato)
+            @Html.DisplayName("Nombre Dato")
         </dt>
 
         <dd>
@@ -41,7 +41,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
             @Html.ActionLink("Back to List", "Index")
         </div>
     }

@@ -7,18 +7,18 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Nuevo", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.CatalogoTipoDato.nombre_tipo_dato)
+            @Html.DisplayName("Nombre Tipo Dato")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Instituciones.nombre_institucion)
+            @Html.DisplayName("Nombre Institución")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.nombre_dato)
+            @Html.DisplayName("Nombre Dato")
         </th>
         <th></th>
     </tr>
@@ -35,9 +35,9 @@
             @Html.DisplayFor(modelItem => item.nombre_dato)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_dato }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_dato }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_dato })
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_dato }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.id_dato }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.id_dato })
         </td>
     </tr>
 }
