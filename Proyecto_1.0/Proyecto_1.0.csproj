@@ -62,6 +62,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -181,7 +183,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstitucionesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\MostrarTipoDatoesController.cs" />
+    <Compile Include="Controllers\MostrarRequisitoTramiteDatoController.cs" />
     <Compile Include="Controllers\RequisitoDatoesController.cs" />
     <Compile Include="Controllers\RequisitoServicioTramitesController.cs" />
     <Compile Include="Controllers\RequisitoTramiteDatoesController.cs" />
@@ -197,6 +199,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Instituciones.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MostrarRequisitoTramiteDato.cs" />
     <Compile Include="Models\RequisitoDato.cs" />
     <Compile Include="Models\RequisitoServicioTramite.cs" />
     <Compile Include="Models\RequisitoTramiteDato.cs" />
@@ -209,7 +212,6 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\menu_dropdown_style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -299,11 +301,7 @@
     <Content Include="Views\TipoDatoes\Details.cshtml" />
     <Content Include="Views\TipoDatoes\Edit.cshtml" />
     <Content Include="Views\TipoDatoes\Index.cshtml" />
-    <Content Include="Views\MostrarTipoDatoes\Create.cshtml" />
-    <Content Include="Views\MostrarTipoDatoes\Delete.cshtml" />
-    <Content Include="Views\MostrarTipoDatoes\Details.cshtml" />
-    <Content Include="Views\MostrarTipoDatoes\Edit.cshtml" />
-    <Content Include="Views\MostrarTipoDatoes\Index.cshtml" />
+    <Content Include="Views\MostrarRequisitoTramiteDato\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -315,6 +313,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
