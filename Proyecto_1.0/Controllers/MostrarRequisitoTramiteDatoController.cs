@@ -30,6 +30,7 @@ namespace Proyecto_1._0.Controllers
                 MySqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 DataTable dt = new DataTable();
                 dt.Load(rdr);
+                return RedirectToAction("Mostrar");
             }
             return View();
         }

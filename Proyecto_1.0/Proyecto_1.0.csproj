@@ -302,6 +302,7 @@
     <Content Include="Views\TipoDatoes\Edit.cshtml" />
     <Content Include="Views\TipoDatoes\Index.cshtml" />
     <Content Include="Views\MostrarRequisitoTramiteDato\Index.cshtml" />
+    <Content Include="Views\MostrarRequisitoTramiteDato\Mostrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
