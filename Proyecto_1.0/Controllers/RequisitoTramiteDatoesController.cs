@@ -49,7 +49,7 @@ namespace Proyecto_1._0.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_req_tra,nombre,es_obligatorio,id_tramite,id_dato")] RequisitoTramiteDato requisitoTramiteDato)
+        public ActionResult Create([Bind(Include = "id_req_tra,es_obligatorio,id_tramite,id_dato")] RequisitoTramiteDato requisitoTramiteDato)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace Proyecto_1._0.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id_req_tra,nombre,es_obligatorio,id_tramite,id_dato")] RequisitoTramiteDato requisitoTramiteDato)
+        public ActionResult Edit([Bind(Include = "id_req_tra,es_obligatorio,id_tramite,id_dato")] RequisitoTramiteDato requisitoTramiteDato)
         {
             if (ModelState.IsValid)
             {

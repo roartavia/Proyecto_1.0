@@ -7,21 +7,18 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Crear Nuevo", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayName("Nombre Dato")
+            @Html.DisplayNameFor(model => model.TipoDato.nombre_dato)
         </th>
         <th>
-            @Html.DisplayName("Nombre Trámite")
+            @Html.DisplayNameFor(model => model.TipoTramite.nombre_tramite)
         </th>
         <th>
-            @Html.DisplayName("Nombre")
-        </th>
-        <th>
-            @Html.DisplayName("Es obligatorio")
+            @Html.DisplayNameFor(model => model.es_obligatorio)
         </th>
         <th></th>
     </tr>
@@ -35,15 +32,12 @@
             @Html.DisplayFor(modelItem => item.TipoTramite.nombre_tramite)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.nombre)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.es_obligatorio)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.id_req_tra }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.id_req_tra }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.id_req_tra })
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_req_tra }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_req_tra }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_req_tra })
         </td>
     </tr>
 }

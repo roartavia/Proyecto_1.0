@@ -12,10 +12,6 @@ namespace Proyecto_1._0.Models
         [Key]
         public int id_req_ser { get; set; }
 
-        [Required(ErrorMessage = "Se debe ingresar el nombre")]
-        [RegularExpression("^[a-zA-Z ]*$", ErrorMessage = "No se permite el ingreso de números")]
-        public string nombre_req_tramite { get; set; }
-
         [Required(ErrorMessage = "Se debe ingresar si es obligatorio o no")]
         [RegularExpression("^[a-zA-Z ]*$", ErrorMessage = "No se permite el ingreso de números")]
         public string es_obligatorio { get; set; }
