@@ -1,7 +1,7 @@
 ﻿@model Proyecto_1._0.Models.RequisitoServicioTramite
 
 @{
-    ViewBag.Title = "Detalles";
+    ViewBag.Title = "Details";
 }
 
 <h2>Details</h2>
@@ -11,7 +11,7 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayName("Nombre Servicio")
+            @Html.DisplayNameFor(model => model.TipoServicio.nombre_servicio)
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Nombre Trámite")
+            @Html.DisplayNameFor(model => model.TipoTramite.nombre_tramite)
         </dt>
 
         <dd>
@@ -27,15 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Nombre Requisito Tramite")
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.nombre_req_tramite)
-        </dd>
-
-        <dt>
-            @Html.DisplayName("Es_obligatorio")
+            @Html.DisplayNameFor(model => model.es_obligatorio)
         </dt>
 
         <dd>

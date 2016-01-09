@@ -25,21 +25,31 @@
                 <ul>
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li class='active has-sub'>
-                        <a href='#'><span>Información sistema</span></a>
+                        <a href='#'><span>Información Servicios</span></a>
                         <ul>
-                            <li>@Html.ActionLink("Instituciones", "Index", "Instituciones")</li>
-                            <li>@Html.ActionLink("Tipo Servicio", "Index", "TipoServicios")</li>   
-                            <li>@Html.ActionLink("Tipo Trámite", "Index", "TipoTramites")</li>   
-                            <li>@Html.ActionLink("Tipo Dato", "Index", "TipoDatoes")</li>   
-                            <li>@Html.ActionLink("Requisito Servicio Dato", "Index", "RequisitoDatoes")</li>   
-                            <li>@Html.ActionLink("Requisito Servicio Trámite", "Index", "RequisitoServicioTramites")</li>
-                            <li>@Html.ActionLink("Requisito Trámite Dato", "Index", "RequisitoTramiteDatoes")</li>           
+                            <li class='has-sub'>
+                                <a href='#'><span>Catálogos</span></a>
+                                <ul>
+                                    <li>@Html.ActionLink("Instituciones", "Index", "Instituciones")</li>
+                                    <li>@Html.ActionLink("Tipo Servicio", "Index", "TipoServicios")</li>
+                                    <li>@Html.ActionLink("Tipo Trámite", "Index", "TipoTramites")</li>
+                                    <li>@Html.ActionLink("Tipo Dato", "Index", "TipoDatoes")</li>
+                                </ul>
+                            </li>
+                            <li class='has-sub'>
+                                <a href='#'><span>Requisitos</span></a>
+                                <ul>
+                                    <li>@Html.ActionLink("Requisito Servicio Dato", "Index", "RequisitoDatoes")</li>
+                                    <li>@Html.ActionLink("Requisito Servicio Trámite", "Index", "RequisitoServicioTramites")</li>
+                                    <li>@Html.ActionLink("Requisito Trámite Dato", "Index", "RequisitoTramiteDatoes")</li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
-                    <li>@Html.ActionLink("Acerca", "About", "Home")</li>
-                    <li class='last'>@Html.ActionLink("Contacto", "Contact", "Home")></li>
-                    <li>@Html.ActionLink("Servicios", "Index", "MostrarRequisitoTramiteDato")</li>
+                    <li><a href='#'><span>About</span></a></li>
+                    <li class='last'><a href='#'><span>Contact</span></a></li>
                 </ul>
+
             </div>
 
         </div>

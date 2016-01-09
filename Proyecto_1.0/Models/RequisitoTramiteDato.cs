@@ -12,10 +12,8 @@ namespace Proyecto_1._0.Models
         [Key]
         public int id_req_tra { get; set; }
 
-        [Required(ErrorMessage = "Se debe ingresar el nombre")]
-        public string nombre{ get; set; }
-
         [Required(ErrorMessage = "Se debe ingresar si es obligatorio o no")]
+        [RegularExpression("^[a-zA-Z ]*$", ErrorMessage = "No se permite el ingreso de números")]
         public string es_obligatorio { get; set; }
 
         [ForeignKey("TipoTramite")]

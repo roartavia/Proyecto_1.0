@@ -1,7 +1,7 @@
 ﻿@model Proyecto_1._0.Models.RequisitoServicioTramite
 
 @{
-    ViewBag.Title = "Editar";
+    ViewBag.Title = "Edit";
 }
 
 <h2>Edit</h2>
@@ -18,15 +18,7 @@
         @Html.HiddenFor(model => model.id_req_ser)
 
         <div class="form-group">
-            @Html.Label("Nombre Requisito Trámite", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nombre_req_tramite, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.nombre_req_tramite, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.Label("Es Obligatorio", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.es_obligatorio, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.es_obligatorio, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.es_obligatorio, "", new { @class = "text-danger" })
@@ -34,7 +26,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.id_tramite, "ID Trámite", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.id_tramite, "id_tramite", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("id_tramite", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.id_tramite, "", new { @class = "text-danger" })
@@ -42,7 +34,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.id_servicio, "ID Servicio", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.id_servicio, "id_servicio", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("id_servicio", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.id_servicio, "", new { @class = "text-danger" })
@@ -51,7 +43,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Guardar" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
     </div>

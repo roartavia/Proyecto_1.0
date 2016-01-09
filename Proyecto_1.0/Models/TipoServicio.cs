@@ -13,6 +13,7 @@ namespace Proyecto_1._0.Models
         public int id_servicio { get; set; }
 
         [Required(ErrorMessage = "Se debe ingresar el nombre del servicio")]
+        [RegularExpression("^[a-zA-Z ]*$", ErrorMessage = "No se permite el ingreso de números")]
         public string nombre_servicio { get; set; }
 
         [ForeignKey("Instituciones")]
