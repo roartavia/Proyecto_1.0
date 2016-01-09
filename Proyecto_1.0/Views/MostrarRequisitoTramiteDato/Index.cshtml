@@ -1,0 +1,53 @@
+﻿@model Proyecto_1._0.Models.MostrarRequisitoTramiteDato
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Mostrar Requisito Tramite Dato</h2>
+
+<form id="frmRequiTraDa" method="post">
+    <div class="container">
+        <fieldset>
+            <legend class="legend"></legend>
+            <table cellpadding="10" cellspacing="0" width="100%">
+                <tr>
+                    <td style="width: 20%;">
+                        <span class="LabelFormat">ID Trámite</span>
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.IDTramite, null, new { @class = "TextboxFormat", @style = " tabindex :0;" })
+                    </td>
+                    <td style="width: 5px;">
+                        @Html.ValidationMessageFor(m => m.IDTramite, null, new { @class = "ErrorMessage", @id = "valMsgForFName" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="color:Red;">@ViewBag.message</p>
+                    </td>
+                    <td>
+                        <input type="submit" value="Submit" name="Submit" />
+                    </td>
+                </tr>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <%foreach (System.Data.DataColumn col in Model.Columns) { %>
+                            <th><%=col.Caption %></th>
+                            <%} %>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% foreach(System.Data.DataRow row in Model.Rows) { %>
+                        <tr>
+                            <% foreach (var cell in row.ItemArray) {%>
+                            <td><%=cell.ToString() %></td>
+                            <%} %>
+                        </tr>
+                        <%} %>
+                    </tbody>
+                </table>
+            </table>
+        </fieldset>
+    </div>
+</form>
