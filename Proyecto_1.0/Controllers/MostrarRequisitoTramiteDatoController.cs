@@ -12,25 +12,27 @@ namespace Proyecto_1._0.Controllers
 {
     public class MostrarRequisitoTramiteDatoController : Controller
     {
+        protected List<string> keywords = new List<string>();
 
         [HttpPost]
         // GET: MostrarRequisitoTramiteDato
         public ActionResult Index(Proyecto_1._0.Models.MostrarRequisitoTramiteDato model)
         {
             MySqlConnection mySqlConnection = new MySqlConnection();
+            DataTable table = new DataTable();
             mySqlConnection.ConnectionString = "server=localhost;user id=pablo;password=141093;database =pintae;persistsecurityinfo=True";
             MySqlCommand cmd = new MySqlCommand("mostrar_requisito_tramite_dato", mySqlConnection);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add(new MySqlParameter("@tramite", MySqlDbType.VarChar)).Value = model.IDTramite;
-
             if (mySqlConnection.State != ConnectionState.Open)
             {
                 mySqlConnection.Open();
 
-                MySqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                DataTable dt = new DataTable();
-                dt.Load(rdr);
-                return RedirectToAction("Mostrar");
+                using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))
+                {
+                    sda.Fill(table);
+                    return View("Mostrar", table);
+                }
             }
             return View();
         }
