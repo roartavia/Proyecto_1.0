@@ -3,31 +3,33 @@
 @{
     ViewBag.Title = "Mostrar";
 }
-
+<link href="../Content/requisitos_style.css" rel="stylesheet" />
 <h2>Mostrar</h2>
-@Html.Label("Para realizar el trámite solicitado se necesitará de los siguientes datos como requisito:", htmlAttributes: new { @class = "control-label col-md-2" })
+@Html.DisplayName("Para realizar el trámite solicitado se necesitará de los siguientes datos como requisito: ")
+<br>
+<br>
 
-@using (Html.BeginForm())
-{
-    <div class="form-horizontal">
-        <table>
-            <tbody>
-                @foreach (System.Data.DataRow row in Model.Rows)
+    @using (Html.BeginForm())
+    {
+        <div class="form-horizontal">
+            <table>
+                <tbody>
+                    @foreach (System.Data.DataRow row in Model.Rows)
                 {
-                    <tr>
-                        @foreach (System.Data.DataColumn col in Model.Columns)
-                        {
-                            <td>@row[col.ColumnName]</td>
-                        }
-                    </tr>
-                }
-            </tbody>
-        </table>
+                        <tr>
+                            @foreach (System.Data.DataColumn col in Model.Columns)
+                            {
+                                <UL type=circle style="color:blue"><td><span class="tab">@row[col.ColumnName]</span></td></UL>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+
+    <input type="checkbox" name="option" value="acepto"> Se ha obtenido el consentimiento por parte del ciudadano, por lo que se puede continuar con el trámite.<br>
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
     </div>
-}
-
-<input type="checkbox" name="option" value="Se ha obtenido el consentimiento por parte del ciudadano, por lo que se puede continuar con el trámite."> Milk<br>
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
