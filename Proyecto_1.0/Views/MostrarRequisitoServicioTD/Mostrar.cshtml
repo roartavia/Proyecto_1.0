@@ -1,0 +1,35 @@
+﻿@model System.Data.DataTable
+@using System.Data;
+@{
+    ViewBag.Title = "Mostrar";
+}
+<link href="../Content/requisitos_style.css" rel="stylesheet" />
+<h2>Mostrar</h2>
+@Html.DisplayName("Para realizar el trámite solicitado se necesitará de los siguientes datos como requisito: ")
+<br>
+<br>
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <table>
+            <tbody>
+                @foreach (System.Data.DataRow row in Model.Rows)
+                {
+                    <tr>
+                        @foreach (System.Data.DataColumn col in Model.Columns)
+                        {
+                            <td><span class="tab">@row[col.ColumnName]</span></td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+<input type="checkbox" name="option" value="acepto"> Se ha obtenido el consentimiento por parte del ciudadano, por lo que se puede continuar con el trámite.<br>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

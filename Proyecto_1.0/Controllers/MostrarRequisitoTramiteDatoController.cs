@@ -12,7 +12,7 @@ namespace Proyecto_1._0.Controllers
 {
     public class MostrarRequisitoTramiteDatoController : Controller
     {
-        protected List<string> keywords = new List<string>();
+        private ConexionDb db = new ConexionDb();
 
         [HttpPost]
         // GET: MostrarRequisitoTramiteDato
@@ -20,10 +20,10 @@ namespace Proyecto_1._0.Controllers
         {
             MySqlConnection mySqlConnection = new MySqlConnection();
             DataTable table = new DataTable();
-            mySqlConnection.ConnectionString = "server=localhost;user id=root;password=1234;database =pintae;persistsecurityinfo=True";
+            mySqlConnection.ConnectionString = "server=localhost;user id=pablo;password=141093;database =pintae;persistsecurityinfo=True";
             MySqlCommand cmd = new MySqlCommand("mostrar_requisito_tramite_dato", mySqlConnection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add(new MySqlParameter("@tramite", MySqlDbType.VarChar)).Value = model.IDTramite;
+            cmd.Parameters.Add(new MySqlParameter("@tramite", MySqlDbType.Int32)).Value = model.IDTramite;
             if (mySqlConnection.State != ConnectionState.Open)
             {
                 mySqlConnection.Open();
@@ -39,6 +39,7 @@ namespace Proyecto_1._0.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.id_tramite = new SelectList(db.tipoTramite, "id_tramite", "nombre_tramite");
             return View();
         }
     }

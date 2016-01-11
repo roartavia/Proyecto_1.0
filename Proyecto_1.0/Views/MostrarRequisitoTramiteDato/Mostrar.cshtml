@@ -19,7 +19,7 @@
                         <tr>
                             @foreach (System.Data.DataColumn col in Model.Columns)
                             {
-                                <UL type=circle style="color:blue"><td><span class="tab">@row[col.ColumnName]</span></td></UL>
+                                <td><span class="tab">@row[col.ColumnName]</span></td>
                             }
                         </tr>
                     }

@@ -6,9 +6,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Proyecto_1._0.Models
 {
-    public class MostrarRequisitoTramiteDato
+    public class MostrarRequisitoServicioTD
     {
-        [Required(ErrorMessage = "*")]
-        public int IDTramite { get; set; }
+        [Required(ErrorMessage = "Se debe ingresar un dato")]
+        public int IDServicio { get; set; }
     }
 }
