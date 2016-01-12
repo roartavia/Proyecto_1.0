@@ -183,6 +183,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstitucionesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MostrarRequisitoServicioTDController.cs" />
     <Compile Include="Controllers\MostrarRequisitoTramiteDatoController.cs" />
     <Compile Include="Controllers\RequisitoDatoesController.cs" />
     <Compile Include="Controllers\RequisitoServicioTramitesController.cs" />
@@ -199,6 +200,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Instituciones.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MostrarRequisitoServicioTD.cs" />
     <Compile Include="Models\MostrarRequisitoTramiteDato.cs" />
     <Compile Include="Models\RequisitoDato.cs" />
     <Compile Include="Models\RequisitoServicioTramite.cs" />
@@ -304,6 +306,8 @@
     <Content Include="Views\TipoDatoes\Index.cshtml" />
     <Content Include="Views\MostrarRequisitoTramiteDato\Index.cshtml" />
     <Content Include="Views\MostrarRequisitoTramiteDato\Mostrar.cshtml" />
+    <Content Include="Views\MostrarRequisitoServicioTD\Index.cshtml" />
+    <Content Include="Views\MostrarRequisitoServicioTD\Mostrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

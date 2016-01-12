@@ -46,12 +46,19 @@
                             </li>
                         </ul>
                     </li>
-                    <li>@Html.ActionLink("Servicio", "Index", "MostrarRequisitoTramiteDato")</li>
+                    
+                    <li class='active has-sub'>
+                        <a href='#'><span>Servicios</span></a>
+                        <ul>
+                            <li>@Html.ActionLink("Servicio", "Index", "MostrarRequisitoServicioTD")</li>
+                            <li>@Html.ActionLink("Tramite", "Index", "MostrarRequisitoTramiteDato")</li>
+                        </ul>
+                    </li>
                     <li><a href='#'><span>About</span></a></li>
                     <li class='last'><a href='#'><span>Contact</span></a></li>
-                </ul>
+                    </ul>
 
-            </div>
+</div>
 
         </div>
     </div>
