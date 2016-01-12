@@ -15,19 +15,22 @@ namespace Proyecto_1._0.Controllers
 
         [HttpPost]
         // GET: MostrarRequisitoTramiteDato
-        public ActionResult Index(Proyecto_1._0.Models.MostrarRequisitoServicioTD model)
+        public ActionResult Index(Proyecto_1._0.Models.TipoServicio model)
         {
             MySqlConnection mySqlConnection = new MySqlConnection();
-            DataTable table = new DataTable();
+            DataTable table, table2, results;
+            table = new DataTable();
+            table2 = new DataTable();
+            results = new DataTable();
             mySqlConnection.ConnectionString = "server=localhost;user id=pablo;password=141093;database =pintae;persistsecurityinfo=True";
 
             MySqlCommand cmd = new MySqlCommand("mostrar_requisito_servicio_tramite", mySqlConnection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add(new MySqlParameter("@servicio", MySqlDbType.Int32)).Value = model.IDServicio;
+            cmd.Parameters.Add(new MySqlParameter("@servicio", MySqlDbType.Int32)).Value = model.id_servicio;
 
             MySqlCommand cmd2 = new MySqlCommand("mostrar_requisito_servicio_dato", mySqlConnection);
             cmd2.CommandType = CommandType.StoredProcedure;
-            cmd2.Parameters.Add(new MySqlParameter("@servicio", MySqlDbType.Int32)).Value = model.IDServicio;
+            cmd2.Parameters.Add(new MySqlParameter("@servicio", MySqlDbType.Int32)).Value = model.id_servicio;
 
             if (mySqlConnection.State != ConnectionState.Open)
             {
@@ -38,8 +41,10 @@ namespace Proyecto_1._0.Controllers
                     sda.Fill(table);
                     using (MySqlDataAdapter sda2 = new MySqlDataAdapter(cmd2))
                     {
-                        sda2.Fill(table);
-                        return View("Mostrar", table);
+                        sda2.Fill(table2);
+                        results = table.Copy();
+                        results.Merge(table2);
+                        return View("Mostrar", results);
                     }
                 }
             }
@@ -48,7 +53,7 @@ namespace Proyecto_1._0.Controllers
 
         public ActionResult Index()
         {
-            //ViewBag.id_tramite = new SelectList(db.tipoTramite, "id_tramite", "nombre_tramite");
+            ViewBag.id_servicio= new SelectList(db.tipoServicio, "id_servicio", "nombre_servicio");
             return View();
         }
     }
