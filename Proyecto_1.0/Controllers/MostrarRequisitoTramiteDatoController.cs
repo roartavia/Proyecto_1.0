@@ -16,14 +16,14 @@ namespace Proyecto_1._0.Controllers
 
         [HttpPost]
         // GET: MostrarRequisitoTramiteDato
-        public ActionResult Index(Proyecto_1._0.Models.MostrarRequisitoTramiteDato model)
+        public ActionResult Index(Proyecto_1._0.Models.RequisitoTramiteDato model)
         {
             MySqlConnection mySqlConnection = new MySqlConnection();
             DataTable table = new DataTable();
             mySqlConnection.ConnectionString = "server=localhost;user id=pablo;password=141093;database =pintae;persistsecurityinfo=True";
             MySqlCommand cmd = new MySqlCommand("mostrar_requisito_tramite_dato", mySqlConnection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add(new MySqlParameter("@tramite", MySqlDbType.Int32)).Value = model.IDTramite;
+            cmd.Parameters.Add(new MySqlParameter("@tramite", MySqlDbType.Int32)).Value = model.id_tramite;
             if (mySqlConnection.State != ConnectionState.Open)
             {
                 mySqlConnection.Open();
