@@ -23,6 +23,7 @@ namespace Proyecto_1._0.Models
         public DbSet<RequisitoServicioTramite> requisitoServicio { get; set; }
         public DbSet<RequisitoTramiteDato> requisitoTramite { get; set; }
         public DbSet<CatalogoTipoDato> catalogoTipoDato { get; set; }
+        public DbSet<CuentaUsuario> cuentaUsuario { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

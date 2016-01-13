@@ -180,6 +180,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CuentaUsuarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstitucionesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -197,6 +198,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CatalogoTipoDato.cs" />
     <Compile Include="Models\ConexionDb.cs" />
+    <Compile Include="Models\CuentaUsuario.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Instituciones.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -308,6 +310,7 @@
     <Content Include="Views\MostrarRequisitoTramiteDato\Mostrar.cshtml" />
     <Content Include="Views\MostrarRequisitoServicioTD\Index.cshtml" />
     <Content Include="Views\MostrarRequisitoServicioTD\Mostrar.cshtml" />
+    <Content Include="Views\CuentaUsuario\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
