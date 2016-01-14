@@ -17,7 +17,21 @@ namespace Proyecto_1._0.Controllers
         // GET: Instituciones
         public ActionResult Index()
         {
-            return View(db.instituciones.ToList());
+            if (Session["Username"] != null)
+            {
+                if (Session["Username"].Equals("administrador"))
+                {
+                    return View(db.instituciones.ToList());
+                }
+                else
+                {
+                    return RedirectToAction("Index", "CuentaUsuario");
+                }
+            }
+            else
+            {
+                return RedirectToAction("Index", "CuentaUsuario");
+            }   
         }
 
         // GET: Instituciones/Details/5
@@ -38,7 +52,14 @@ namespace Proyecto_1._0.Controllers
         // GET: Instituciones/Create
         public ActionResult Create()
         {
-            return View();
+            if (Session["Username"] != null)
+            {
+                return View();
+            } else
+            {
+                return RedirectToAction("Index", "CuentaUsuario");
+            }
+            
         }
 
         // POST: Instituciones/Create
@@ -50,11 +71,18 @@ namespace Proyecto_1._0.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.instituciones.Add(instituciones);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (Session["Username"].Equals("administrador"))
+                {
+                    db.instituciones.Add(instituciones);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "CuentaUsuario");
+                }
+                
             }
-
             return View(instituciones);
         }
 
@@ -82,9 +110,17 @@ namespace Proyecto_1._0.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(instituciones).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (Session["Username"].Equals("administrador"))
+                {
+                    db.Entry(instituciones).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "CuentaUsuario");
+                }
+                
             }
             return View(instituciones);
         }

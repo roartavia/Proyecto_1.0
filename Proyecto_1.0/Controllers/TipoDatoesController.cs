@@ -17,8 +17,22 @@ namespace Proyecto_1._0.Controllers
         // GET: TipoDatoes
         public ActionResult Index()
         {
-            var tipoDato = db.tipoDato.Include(t => t.CatalogoTipoDato).Include(t => t.Instituciones);
-            return View(tipoDato.ToList());
+            if (Session["Username"] != null)
+            {
+                if (Session["Username"].Equals("administrador"))
+                {
+                    var tipoDato = db.tipoDato.Include(t => t.CatalogoTipoDato).Include(t => t.Instituciones);
+                    return View(tipoDato.ToList());
+                }
+                else
+                {
+                    return RedirectToAction("Index", "CuentaUsuario");
+                }
+            } else
+            {
+                return RedirectToAction("Index", "CuentaUsuario");
+            }
+            
         }
 
         // GET: TipoDatoes/Details/5
@@ -39,9 +53,17 @@ namespace Proyecto_1._0.Controllers
         // GET: TipoDatoes/Create
         public ActionResult Create()
         {
-            ViewBag.id_tipo_dato = new SelectList(db.catalogoTipoDato, "id_tipo_dato", "nombre_tipo_dato");
-            ViewBag.id_institucion = new SelectList(db.instituciones, "id_institucion", "nombre_institucion");
-            return View();
+            if (Session["Username"] != null)
+            {
+                ViewBag.id_tipo_dato = new SelectList(db.catalogoTipoDato, "id_tipo_dato", "nombre_tipo_dato");
+                ViewBag.id_institucion = new SelectList(db.instituciones, "id_institucion", "nombre_institucion");
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "CuentaUsuario");
+            }
+            
         }
 
         // POST: TipoDatoes/Create
@@ -53,11 +75,18 @@ namespace Proyecto_1._0.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.tipoDato.Add(tipoDato);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                if (Session["Username"].Equals("administrador"))
+                {
+                    db.tipoDato.Add(tipoDato);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "CuentaUsuario");
+                }
 
+            }
             ViewBag.id_tipo_dato = new SelectList(db.catalogoTipoDato, "id_tipo_dato", "nombre_tipo_dato", tipoDato.id_tipo_dato);
             ViewBag.id_institucion = new SelectList(db.instituciones, "id_institucion", "nombre_institucion", tipoDato.id_institucion);
             return View(tipoDato);

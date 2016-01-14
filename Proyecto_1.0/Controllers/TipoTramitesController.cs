@@ -17,8 +17,23 @@ namespace Proyecto_1._0.Controllers
         // GET: TipoTramites
         public ActionResult Index()
         {
-            var tipoTramite = db.tipoTramite.Include(t => t.Instituciones);
-            return View(tipoTramite.ToList());
+            if (Session["Username"] != null)
+            {
+                if (Session["Username"].Equals("administrador"))
+                {
+                    var tipoTramite = db.tipoTramite.Include(t => t.Instituciones);
+                    return View(tipoTramite.ToList());
+                }
+                else
+                {
+                    return RedirectToAction("Index", "CuentaUsuario");
+                }
+            }
+            else
+            {
+                return RedirectToAction("Index", "CuentaUsuario");
+            }
+            
         }
 
         // GET: TipoTramites/Details/5
@@ -39,8 +54,16 @@ namespace Proyecto_1._0.Controllers
         // GET: TipoTramites/Create
         public ActionResult Create()
         {
-            ViewBag.id_institucion = new SelectList(db.instituciones, "id_institucion", "nombre_institucion");
-            return View();
+            if (Session["Username"] != null)
+            {
+                ViewBag.id_institucion = new SelectList(db.instituciones, "id_institucion", "nombre_institucion");
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "CuentaUsuario");
+            }
+            
         }
 
         // POST: TipoTramites/Create
@@ -52,9 +75,16 @@ namespace Proyecto_1._0.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.tipoTramite.Add(tipoTramite);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (Session["Username"].Equals("administrador"))
+                {
+                    db.tipoTramite.Add(tipoTramite);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "CuentaUsuario");
+                }        
             }
 
             ViewBag.id_institucion = new SelectList(db.instituciones, "id_institucion", "nombre_institucion", tipoTramite.id_institucion);

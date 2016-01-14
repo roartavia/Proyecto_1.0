@@ -18,14 +18,13 @@ namespace Proyecto_1._0.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "administrador")]
         public ActionResult Index(CuentaUsuario user)
         {
             //var usr = db.userAccount.Single(u => u.nombre_usuario == user.nombre_usuario && u.password == user.password);
             var usr = db.cuentaUsuario.Where(a => a.nombre_usuario.Equals(user.nombre_usuario) && a.password.Equals(user.password)).FirstOrDefault();
             if (usr != null)
             {
-                Session["Username"] = usr.nombre_usuario.ToString();
+                Session["Username"] = usr.Roles.ToString();
                 return RedirectToAction("Index", "Home");
             }
             else

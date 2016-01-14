@@ -42,12 +42,6 @@ namespace Proyecto_1._0.Controllers
             ViewBag.id_tramite = new SelectList(db.tipoTramite, "id_tramite", "nombre_tramite");
             return View();
         }
-
-        [HttpPost]
-        protected void  pagina_servicios(object sender, EventArgs e)
-        {
-            RedirectToAction("Index", "Home");
-        }
         
     }
 }
