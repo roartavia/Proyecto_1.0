@@ -27,8 +27,18 @@
             </table>
         </div>
     }
-
+    <br>
+    <br>
     <input type="checkbox" name="option" value="acepto"> Se ha obtenido el consentimiento por parte del ciudadano, por lo que se puede continuar con el trámite.<br>
+    <br>
+    <br>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            </script>
+            <input type="button" value="Enviar" onclick="Alert('Su solicitud ha sido enviada') location.href='@Url.Action("Index", "Home")'" />
+            
+        </div>
+    </div>
 
     <div>
         @Html.ActionLink("Back to List", "Index")
