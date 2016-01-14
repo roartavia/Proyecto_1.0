@@ -4,14 +4,14 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Mostrar Detalles</h2>
 
 <div>
-    <h4>TipoTramite</h4>
+    <h4>Tramites</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayName("Nombre Institución")
+            @Html.DisplayName("Nombre de la institución")
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Nombre Trámite")
+            @Html.DisplayName("Nombre del trámite")
         </dt>
 
         <dd>
@@ -30,5 +30,5 @@
 </div>
 <p>
     @Html.ActionLink("Editar", "Edit", new { id = Model.id_tramite }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Volver", "Index")
 </p>

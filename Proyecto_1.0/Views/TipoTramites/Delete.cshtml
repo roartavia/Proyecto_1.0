@@ -6,13 +6,12 @@
 
 <h2>Delete</h2>
 
-<h3>Estás seguro que deseas eliminar este elemento?</h3>
+<h5>¿Estás seguro que deseas eliminar este elemento?</h5>
 <div>
-    <h4>TipoTramite</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayName("Nombre Institución")
+            @Html.DisplayName("Nombre de la institución")
         </dt>
 
         <dd>
@@ -20,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Nombre Trámite")
+            @Html.DisplayName("Nombre del trámite")
         </dt>
 
         <dd>
@@ -34,7 +33,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Eliminar" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("Volver", "Index")
         </div>
     }
 </div>
