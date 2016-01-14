@@ -4,15 +4,14 @@
     ViewBag.Title = "Eliminar";
 }
 
-<h2>Delete</h2>
+<h2>Eliminar Institución</h2>
 
-<h3>Estás seguro que deseas eliminar esta institución?</h3>
+<h5>¿Estás seguro que deseas desactivar esta institución?</h5>
 <div>
-    <h4>Instituciones</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayName("Nombre Institución")
+            @Html.DisplayName("Nombre de la institución")
         </dt>
 
         <dd>
@@ -26,7 +25,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Eliminar" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("Volver", "Index")
         </div>
     }
 </div>
