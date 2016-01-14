@@ -18,7 +18,7 @@ namespace Proyecto_1._0.Controllers
         }
 
         [HttpPost]
-        [Authorize(Users = "juan")]
+        [Authorize(Roles = "administrador")]
         public ActionResult Index(CuentaUsuario user)
         {
             //var usr = db.userAccount.Single(u => u.nombre_usuario == user.nombre_usuario && u.password == user.password);
