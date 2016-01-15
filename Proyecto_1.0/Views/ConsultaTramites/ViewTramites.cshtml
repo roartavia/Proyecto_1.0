@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "ViewTramites";
+}
+
+<h2>Tramites del ciudadano consultado.</h2>
+
+<ul>
+    @if (ViewBag.TramitesCiudadano != null)
+    {
+        foreach (Mi_Parte.PINTAE_Service.TramiteRealizado tramite in ViewBag.TramitesCiudadano)
+        {
+            <li>@Html.ActionLink(
+                  tramite.Nombre_tramite,
+                  "InfoTramite",
+                  "ConsultaTramites",
+                  new { id_tramite_realizado = tramite.Id_tramite },
+                  null)
+            </li>
+        }
+    }
+    else if((int)ViewBag.Error == 2)
+    {<li style="color:red; font-size:medium;"><b>No hay trámites para la cédula consultada.</b></li>}
+    else if ((int)ViewBag.Error == 1)
+    {<li style="color:red; font-size:medium;"><b>Error de conexión, inténtelo más tarde.</b></li>}
+
+
+</ul>
