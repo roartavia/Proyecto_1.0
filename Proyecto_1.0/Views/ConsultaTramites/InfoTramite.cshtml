@@ -1,0 +1,47 @@
+﻿@model Mi_Parte.Models.InfoTramiteConsultado
+
+@{
+    ViewBag.Title = "InfoTramite";
+}
+
+<h2>Información del Trámite consultado.</h2>
+@if (ViewBag.Error != null)
+{
+    if ((int)ViewBag.Error == 2)
+    {<li style="color:red; font-size:medium;"><b>Ocurrió un error con el trámite consultado.</b></li>}
+    else if ((int)ViewBag.Error == 1)
+    {<li style="color:red; font-size:medium;"><b>Error de conexión, inténtelo más tarde.</b></li>}
+}
+else
+{
+<div>
+    <h4>Detalles:</h4>
+    <hr />   
+        <table>
+            <tr>
+                <td>
+                    <b>Nombre del trámite: </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.nombre_tramite)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Fecha de solicitud: </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.fecha_solicitud)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Estado: </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.estado)
+                </td>
+            </tr>
+        </table>
+</div>
+}
