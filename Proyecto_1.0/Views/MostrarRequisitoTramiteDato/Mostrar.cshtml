@@ -4,8 +4,8 @@
     ViewBag.Title = "Mostrar";
 }
 <link href="../Content/requisitos_style.css" rel="stylesheet" />
-<h2>Mostrar</h2>
-@Html.DisplayName("Para realizar el trámite solicitado se necesitará de los siguientes datos como requisito: ")
+<h2>Requisitos</h2>
+@Html.DisplayName("Para realizar el trámite solicitado se necesitará de los siguientes requisitos: ")
 <br>
 <br>
 
@@ -29,7 +29,7 @@
     }
     <br>
     <br>
-    <input type="checkbox" name="option" value="acepto"> Se ha obtenido el consentimiento por parte del ciudadano, por lo que se puede continuar con el trámite.<br>
+    <input type="checkbox" name="option" value="acepto"> Se ha obtenido el consentimiento por parte del ciudadano.<br>
     <br>
     <br>
     <div class="form-group">
@@ -41,5 +41,5 @@
     </div>
 
     <div>
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Volver", "Index")
     </div>

@@ -4,14 +4,14 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Mostrar Detalles</h2>
 
 <div>
-    <h4>RequisitoServicioTramite</h4>
+    <h4>Requisito Servicio-Trámite</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.TipoServicio.nombre_servicio)
+            @Html.DisplayName("Nombre del servicio")
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TipoTramite.nombre_tramite)
+            @Html.DisplayName("Nombre del trámite")
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.es_obligatorio)
+            @Html.DisplayName("Obligatorio")
         </dt>
 
         <dd>
@@ -37,6 +37,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id_req_ser }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id_req_ser }) |
+    @Html.ActionLink("Volver", "Index")
 </p>

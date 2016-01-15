@@ -5,7 +5,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Mostrar Requisito Servicio Trámite</h2>
+<h3>Mostrar Requisitos de Servicios</h3>
 
 
 @using (Html.BeginForm())
@@ -15,7 +15,7 @@
     <div class="form-horizontal">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.IDServicio, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Nombre del servicio", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("id_servicio", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IDServicio, "", new { @class = "text-danger" })
@@ -23,7 +23,7 @@
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Solicitar" class="btn btn-default" />
+                <input type="submit" value="Mostrar" class="btn btn-default" />
             </div>
         </div>
     </div>

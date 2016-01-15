@@ -19,7 +19,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("PINTAE", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.Label("PINTAE", new { @class = "navbar-brand" })
             </div>
             <div id='cssmenu'>
                 <ul>
@@ -51,11 +51,11 @@
                         <a href='#'><span>Servicios</span></a>
                         <ul>
                             <li>@Html.ActionLink("Servicio", "Index", "MostrarRequisitoServicioTD")</li>
-                            <li>@Html.ActionLink("Tramite", "Index", "MostrarRequisitoTramiteDato")</li>
+                            <li>@Html.ActionLink("Trámite", "Index", "MostrarRequisitoTramiteDato")</li>
                         </ul>
                     </li>
                     <li>@Html.ActionLink("Acerca", "About", "Home")</li>
-                    <li class='last'><a href='#'><span>Contact</span></a></li>
+                    <li class='last'><a href='#'><span>Contacto</span></a></li>
                     </ul>
 
 </div>

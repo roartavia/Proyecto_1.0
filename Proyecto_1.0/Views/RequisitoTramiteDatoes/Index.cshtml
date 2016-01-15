@@ -4,21 +4,22 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Mantenimiento de Requisitos</h2>
+<h4>Trámite-Dato</h4>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Registrar Nuevo", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.TipoDato.nombre_dato)
+            @Html.DisplayName("Nombre del tipo de dato")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TipoTramite.nombre_tramite)
+            @Html.DisplayName("Nombre del trámite")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.es_obligatorio)
+            @Html.DisplayName("Obligatorio")
         </th>
         <th></th>
     </tr>
@@ -35,9 +36,9 @@
             @Html.DisplayFor(modelItem => item.es_obligatorio)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_req_tra }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_req_tra }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_req_tra })
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_req_tra }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.id_req_tra }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.id_req_tra })
         </td>
     </tr>
 }
