@@ -15,9 +15,15 @@ namespace Proyecto_1._0.Controllers
         private ConexionDb db = new ConexionDb();
 
         // GET: RequisitoServicioTramites
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            var requisitoServicio = db.requisitoServicio.Include(r => r.TipoServicio).Include(r => r.TipoTramite);
+            //var requisitoServicio = db.requisitoServicio.Include(r => r.TipoServicio).Include(r => r.TipoTramite);
+            var requisitoServicio = from s in db.requisitoServicio
+                                    select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                requisitoServicio = requisitoServicio.Where(s => s.TipoServicio.nombre_servicio.Contains(searchString));
+            }
             return View(requisitoServicio.ToList());
         }
 

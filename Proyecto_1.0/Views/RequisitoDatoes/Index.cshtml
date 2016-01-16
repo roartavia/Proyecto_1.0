@@ -10,16 +10,25 @@
 <p>
     @Html.ActionLink("Registrar Nuevo", "Create")
 </p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Buscar por servicio: @Html.TextBox("SearchString")
+        <input type="submit" value="Buscar" />
+    </p>
+}
+
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayName("Nombre del tipo de dato")
-        </th>
         <th>
             @Html.DisplayName("Nombre del servicio")
         </th>
         <th>
-            @Html.DisplayName("Obligatorio")
+            @Html.DisplayName("Nombre del tipo de dato")
+        </th>
+        <th>
+            @Html.ActionLink("Obligatorio", "Index", new { sortOrder = ViewBag.NameSortParm })
         </th>
         <th></th>
     </tr>
@@ -27,10 +36,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.TipoDato.nombre_dato)
+            @Html.DisplayFor(modelItem => item.TipoServicio.nombre_servicio)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TipoServicio.nombre_servicio)
+            @Html.DisplayFor(modelItem => item.TipoDato.nombre_dato)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.es_obligatorio)
