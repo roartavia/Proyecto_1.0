@@ -15,13 +15,20 @@ namespace Proyecto_1._0.Controllers
         private ConexionDb db = new ConexionDb();
 
         // GET: TipoTramites
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
             if (Session["Username"] != null)
             {
                 if (Session["Username"].Equals("administrador"))
                 {
-                    var tipoTramite = db.tipoTramite.Include(t => t.Instituciones);
+                    //var tipoTramite = db.tipoTramite.Include(t => t.Instituciones);
+                    //var tipoServicio = db.tipoServicio.Include(t => t.Instituciones);
+                    var tipoTramite = from s in db.tipoTramite
+                                       select s;
+                    if (!String.IsNullOrEmpty(searchString))
+                    {
+                        tipoTramite = tipoTramite.Where(s => s.Instituciones.nombre_institucion.Contains(searchString));
+                    }
                     return View(tipoTramite.ToList());
                 }
                 else

@@ -35,16 +35,12 @@ namespace Proyecto_1._0.Controllers
             return View();
         }
 
-        public ActionResult LoggedIn()
+        // POST: /Account/LogOff
+        [HttpPost]
+        public ActionResult LogOut()
         {
-            if (Session["Username"] != null)
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login");
-            }
+            Session.Abandon();
+            return RedirectToAction("Index", "CuentaUsuario");
         }
     }
 }

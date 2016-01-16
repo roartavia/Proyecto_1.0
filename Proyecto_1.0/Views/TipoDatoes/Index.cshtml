@@ -9,6 +9,15 @@
 <p>
     @Html.ActionLink("Registrar Nuevo", "Create")
 </p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Buscar por nombre: @Html.TextBox("SearchString")
+        <input type="submit" value="Buscar" />
+    </p>
+}
+
 <table class="table">
     <tr>
         <th>

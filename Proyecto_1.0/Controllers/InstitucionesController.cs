@@ -15,7 +15,7 @@ namespace Proyecto_1._0.Controllers
         private ConexionDb db = new ConexionDb();
 
         // GET: Instituciones
-        public ActionResult Index(string sortOrder)
+        public ActionResult Index(string sortOrder, string searchString)
         {
             if (Session["Username"] != null)
             {
@@ -24,6 +24,10 @@ namespace Proyecto_1._0.Controllers
                     ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
                     var inst = from s in db.instituciones
                                    select s;
+                    if (!String.IsNullOrEmpty(searchString))
+                    {
+                        inst = inst.Where(s => s.nombre_institucion.Contains(searchString));
+                    }
                     switch (sortOrder)
                     {
                         case "name_desc":
