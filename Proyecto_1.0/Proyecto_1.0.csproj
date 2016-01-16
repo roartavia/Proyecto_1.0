@@ -180,7 +180,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ConsultaTramitesController.cs" />
     <Compile Include="Controllers\CuentaUsuarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstitucionesController.cs" />
@@ -314,9 +313,6 @@
     <Content Include="Views\MostrarRequisitoServicioTD\Index.cshtml" />
     <Content Include="Views\MostrarRequisitoServicioTD\Mostrar.cshtml" />
     <Content Include="Views\CuentaUsuario\Index.cshtml" />
-    <Content Include="Views\ConsultaTramites\ConsultaPorCedula.cshtml" />
-    <Content Include="Views\ConsultaTramites\InfoTramite.cshtml" />
-    <Content Include="Views\ConsultaTramites\ViewTramites.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
