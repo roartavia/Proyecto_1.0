@@ -22,7 +22,7 @@ namespace Proyecto_1._0.Controllers
             table = new DataTable();
             table2 = new DataTable();
             results = new DataTable();
-            mySqlConnection.ConnectionString = "server=localhost;user id=root;password=1234;database =pintae;persistsecurityinfo=True";
+            mySqlConnection.ConnectionString = "server=localhost;user id=pablo;password=141093;database =pintae;persistsecurityinfo=True";
 
             MySqlCommand cmd = new MySqlCommand("mostrar_requisito_servicio_tramite", mySqlConnection);
             cmd.CommandType = CommandType.StoredProcedure;
