@@ -34,7 +34,7 @@ namespace Mi_Parte.Controllers
             return View();
         }
 
-        public ViewResult ViewTramites(string cedula)
+        /*public ViewResult ViewTramites(string cedula)
         {
             PINTAE_Service.Service1 servicio = new PINTAE_Service.Service1();
             string respuestaListaJson = servicio.ConsultaTramitesPorCedulaJson(cedula);
@@ -73,5 +73,6 @@ namespace Mi_Parte.Controllers
                 return View(infoTramite);
             }
         }
+    */
+        }
     }
-}

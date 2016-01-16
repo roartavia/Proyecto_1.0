@@ -15,13 +15,26 @@ namespace Proyecto_1._0.Controllers
         private ConexionDb db = new ConexionDb();
 
         // GET: Instituciones
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder)
         {
             if (Session["Username"] != null)
             {
                 if (Session["Username"].Equals("administrador"))
                 {
-                    return View(db.instituciones.ToList());
+                    ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+                    var inst = from s in db.instituciones
+                                   select s;
+                    switch (sortOrder)
+                    {
+                        case "name_desc":
+                            inst = inst.OrderByDescending(s => s.nombre_institucion);
+                            break;
+                        default:
+                            inst = inst.OrderBy(s => s.nombre_institucion);
+                            break;
+                    }
+                    return View(inst.ToList());
+                    //return View(db.instituciones.ToList());
                 }
                 else
                 {

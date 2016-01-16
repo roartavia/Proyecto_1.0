@@ -15,13 +15,19 @@ namespace Proyecto_1._0.Controllers
         private ConexionDb db = new ConexionDb();
 
         // GET: TipoServicios
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
             if (Session["Username"] != null)
             {
                 if (Session["Username"].Equals("administrador"))
                 {
-                    var tipoServicio = db.tipoServicio.Include(t => t.Instituciones);
+                    //var tipoServicio = db.tipoServicio.Include(t => t.Instituciones);
+                    var tipoServicio = from s in db.tipoServicio
+                                       select s;
+                    if (!String.IsNullOrEmpty(searchString))
+                    {
+                        tipoServicio = tipoServicio.Where(s => s.Instituciones.nombre_institucion.Contains(searchString));
+                    }
                     return View(tipoServicio.ToList());
                 }
                 else
