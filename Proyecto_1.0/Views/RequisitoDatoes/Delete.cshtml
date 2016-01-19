@@ -1,0 +1,47 @@
+﻿@model Proyecto_1._0.Models.RequisitoDato
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar Requisito</h2>
+<h4>Requisito Servicio-Dato</h4>
+<h5>¿Estás seguro que deseas desactivar esta institución?</h5>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Nombre del tipo de dato")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoDato.nombre_dato)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Nombre del servicio")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoServicio.nombre_servicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Obligatorio")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.es_obligatorio)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver", "Index")
+        </div>
+    }
+</div>

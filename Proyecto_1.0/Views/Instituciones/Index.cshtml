@@ -4,15 +4,24 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Catálogo de instituciones</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Registrar Nuevo", "Create")
 </p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Buscar por nombre: @Html.TextBox("SearchString")
+        <input type="submit" value="Buscar" />
+    </p>
+}
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.nombre_institucion)
+            @Html.ActionLink("Nombre de la institución", "Index", new { sortOrder = ViewBag.NameSortParm })
         </th>
         <th></th>
     </tr>
@@ -23,9 +32,9 @@
             @Html.DisplayFor(modelItem => item.nombre_institucion)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_institucion }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_institucion }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_institucion })
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_institucion }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.id_institucion }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.id_institucion })
         </td>
     </tr>
 }

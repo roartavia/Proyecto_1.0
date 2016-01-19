@@ -15,9 +15,40 @@ namespace Proyecto_1._0.Controllers
         private ConexionDb db = new ConexionDb();
 
         // GET: Instituciones
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string searchString)
         {
-            return View(db.instituciones.ToList());
+            if (Session["Username"] != null)
+            {
+                if (Session["Username"].Equals("administrador"))
+                {
+                    ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+                    var inst = from s in db.instituciones
+                                   select s;
+                    if (!String.IsNullOrEmpty(searchString))
+                    {
+                        inst = inst.Where(s => s.nombre_institucion.Contains(searchString));
+                    }
+                    switch (sortOrder)
+                    {
+                        case "name_desc":
+                            inst = inst.OrderByDescending(s => s.nombre_institucion);
+                            break;
+                        default:
+                            inst = inst.OrderBy(s => s.nombre_institucion);
+                            break;
+                    }
+                    return View(inst.ToList());
+                    //return View(db.instituciones.ToList());
+                }
+                else
+                {
+                    return RedirectToAction("Index", "CuentaUsuario");
+                }
+            }
+            else
+            {
+                return RedirectToAction("Index", "CuentaUsuario");
+            }   
         }
 
         // GET: Instituciones/Details/5
@@ -38,7 +69,14 @@ namespace Proyecto_1._0.Controllers
         // GET: Instituciones/Create
         public ActionResult Create()
         {
-            return View();
+            if (Session["Username"] != null)
+            {
+                return View();
+            } else
+            {
+                return RedirectToAction("Index", "CuentaUsuario");
+            }
+            
         }
 
         // POST: Instituciones/Create
@@ -50,11 +88,18 @@ namespace Proyecto_1._0.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.instituciones.Add(instituciones);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (Session["Username"].Equals("administrador"))
+                {
+                    db.instituciones.Add(instituciones);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "CuentaUsuario");
+                }
+                
             }
-
             return View(instituciones);
         }
 
@@ -82,9 +127,17 @@ namespace Proyecto_1._0.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(instituciones).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (Session["Username"].Equals("administrador"))
+                {
+                    db.Entry(instituciones).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "CuentaUsuario");
+                }
+                
             }
             return View(instituciones);
         }

@@ -13,6 +13,7 @@ namespace Proyecto_1._0.Models
         public int id_tramite { get; set; }
 
         [Required(ErrorMessage = "Se debe ingresar el nombre del tramite")]
+        [RegularExpression("^[a-zA-Z ]*$", ErrorMessage = "No se permite el ingreso de números")]
         public string nombre_tramite { get; set; }
 
         [ForeignKey("Instituciones")]

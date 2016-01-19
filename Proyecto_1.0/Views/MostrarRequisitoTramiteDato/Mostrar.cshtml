@@ -1,0 +1,45 @@
+﻿@model System.Data.DataTable 
+@using System.Data;
+@{
+    ViewBag.Title = "Mostrar";
+}
+<link href="../Content/requisitos_style.css" rel="stylesheet" />
+<h2>Requisitos</h2>
+@Html.DisplayName("Para realizar el trámite solicitado se necesitará de los siguientes requisitos: ")
+<br>
+<br>
+
+    @using (Html.BeginForm())
+    {
+        <div class="form-horizontal">
+            <table>
+                <tbody>
+                    @foreach (System.Data.DataRow row in Model.Rows)
+                {
+                        <tr>
+                            @foreach (System.Data.DataColumn col in Model.Columns)
+                            {
+                                <td><span class="tab">@row[col.ColumnName]</span></td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    <br>
+    <br>
+    <input type="checkbox" name="option" value="acepto"> Se ha obtenido el consentimiento por parte del ciudadano.<br>
+    <br>
+    <br>
+    <div class="form-group">
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" value="Enviar" onclick="@("alert('Su solicitud ha sido enviada. En los próximos 10 días su solicitud será resuelta.'); window.location.href='" + @Url.Action("Index", "Home") + "'");" />
+            </div>
+        </div>
+    </div>
+
+    <div>
+        @Html.ActionLink("Volver", "Index")
+    </div>

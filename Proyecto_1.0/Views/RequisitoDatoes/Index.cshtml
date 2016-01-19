@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Proyecto_1._0.Models.RequisitoDato>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Mantenimiento de Requisitos</h2>
+<h4>Servicio-Dato</h4>
+
+<p>
+    @Html.ActionLink("Registrar Nuevo", "Create")
+</p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Buscar por servicio: @Html.TextBox("SearchString")
+        <input type="submit" value="Buscar" />
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Nombre del servicio")
+        </th>
+        <th>
+            @Html.DisplayName("Nombre del tipo de dato")
+        </th>
+        <th>
+            @Html.ActionLink("Obligatorio", "Index", new { sortOrder = ViewBag.NameSortParm })
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoServicio.nombre_servicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoDato.nombre_dato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.es_obligatorio)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_req_dato }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.id_req_dato }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.id_req_dato })
+        </td>
+    </tr>
+}
+
+</table>
