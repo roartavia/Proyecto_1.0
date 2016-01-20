@@ -20,7 +20,7 @@ namespace Proyecto_1._0.Controllers
         {
             MySqlConnection mySqlConnection = new MySqlConnection();
             DataTable table = new DataTable();
-            mySqlConnection.ConnectionString = "server=localhost;user id=pablo;password=141093;database =pintae;persistsecurityinfo=True";
+            mySqlConnection.ConnectionString = "server=localhost;user id=root;password=1234;database =pintae;persistsecurityinfo=True";
             MySqlCommand cmd = new MySqlCommand("mostrar_requisito_tramite_dato", mySqlConnection);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add(new MySqlParameter("@tramite", MySqlDbType.Int32)).Value = model.id_tramite;

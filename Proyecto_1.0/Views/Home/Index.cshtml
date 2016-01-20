@@ -4,11 +4,11 @@
 
 @if (Session["Username"] != null)
 {
-    <h2>@Session["Username"].ToString()</h2>
+    <h2><font color="blue">@Session["Username"].ToString()</font></h2>
 }
 
-<div class="jumbotron">
-    <h1>Bienvenidos</h1>
+<div style="background:transparent !important" class="jumbotron">
+    <h1><font color="white">Bienvenidos</font></h1>
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -31,6 +31,6 @@
             </div>
         </div>
     </div>
-    <p class="lead">PINTAE te conecta con el Estado.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <p class="lead"><font color="white">PINTAE te conecta con el Estado.</font></p>
+    <p><a href="http://asp.net" class="btn btn-lg btn-default">Learn more &raquo;</a></p>
 </div>
