@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-namespace Mi_Parte.Models
+namespace Proyecto_1._0.Models
 {
     public class Ciudadano
     {

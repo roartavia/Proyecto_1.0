@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Solicitudes";
+}
+
+<h2>Solicitudes pendientes.</h2>
+@if (ViewBag.Peticiones != null)
+{
+    foreach (Proyecto_1._0.PINTAE_Service1.Peticion peticion in ViewBag.Peticiones)
+    {
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <b>Cédula de solicitante:  </b>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => peticion.Cedula)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Tipo de dato que solicita:  </b>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => peticion.Nombre_dato)
+                    </td>
+                </tr>
+            </table>
+            @Html.ActionLink(
+                  "Responder",
+                  "ResponderPeticion",
+                  "Peticiones",
+                  new { id_tramite_realizado = peticion.Id_tramite_solicitado, id_dato = peticion.Id_tipo_dato, cedula = peticion.Cedula },
+                  null)
+        </div>
+
+    }
+}
+else if ((int)ViewBag.Error == 2)
+{<li style="color:red; font-size:medium;"><b>Error de consulta.</b></li>}
+else if ((int)ViewBag.Error == 1)
+{<li style="color:red; font-size:medium;"><b>Error de conexión, inténtelo más tarde.</b></li>}
+
+
+

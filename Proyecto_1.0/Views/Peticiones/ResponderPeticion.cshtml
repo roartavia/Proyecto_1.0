@@ -1,0 +1,64 @@
+﻿@model Proyecto_1._0.Models.PeticionDato
+
+@{
+    ViewBag.Title = "Responder petición";
+}
+
+<h2>Envío de datos.</h2>
+@if (ViewBag.Error == null)
+{
+    string nombreTipo = ViewBag.TipoDato;
+    switch (nombreTipo)
+    {
+        case "string":
+            using (Html.BeginForm("ResponderPeticion", "Peticiones", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <h4>Adjunte el documento a enviar.</h4>
+                <input type="file" name="file" />
+                <input type="submit" value="OK" />
+            }
+            break;
+        case "int":
+            using (Html.BeginForm("ResponderPeticion", "Peticiones", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <h4>Adjunte el documento a enviar.</h4>
+                <input type="file" name="file" />
+                <input type="submit" value="OK" />
+            }
+            break;
+        case "doc":
+            using (Html.BeginForm("ResponderPeticion", "Peticiones", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <h4>Adjunte el documento a enviar.</h4>
+                <input type="file" name="file" />
+                <input type="submit" value="OK" />
+            }
+            break;
+        case "pdf":
+            using (Html.BeginForm("ResponderPeticion", "Peticiones", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <h4>Adjunte el PDF a enviar.</h4>
+                <input type="file" name="file" />
+                <input type="submit" value="OK" />
+            }
+            break;
+        case "jpg":
+            using (Html.BeginForm("ResponderPeticion", "Peticiones", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <h4>Adjunte la imagen a enviar.</h4>
+                <input type="file" name="file" />
+                <input type="submit" value="OK" />
+            }
+            break;
+        default:
+            break;
+    }
+}
+else if ((int)ViewBag.Error == 2)
+{<li style="color:red; font-size:medium;"><b>Error de consulta.</b></li>}
+else if ((int)ViewBag.Error == 1)
+{<li style="color:red; font-size:medium;"><b>Error de conexión, inténtelo más tarde.</b></li>}
+
+
+
+

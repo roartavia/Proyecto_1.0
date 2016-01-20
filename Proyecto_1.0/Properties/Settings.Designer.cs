@@ -32,5 +32,15 @@ namespace Proyecto_1._0.Properties {
                 return ((string)(this["Proyecto_1_0_PINTAE_Service_Service1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:51140/Service1.svc")]
+        public string Proyecto_1_0_PINTAE_Service1_Service1 {
+            get {
+                return ((string)(this["Proyecto_1_0_PINTAE_Service1_Service1"]));
+            }
+        }
     }
 }

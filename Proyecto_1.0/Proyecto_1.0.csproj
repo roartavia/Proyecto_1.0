@@ -180,12 +180,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ConsultaTramitesController.cs" />
     <Compile Include="Controllers\CuentaUsuarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstitucionesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MostrarRequisitoServicioTDController.cs" />
     <Compile Include="Controllers\MostrarRequisitoTramiteDatoController.cs" />
+    <Compile Include="Controllers\PeticionesController.cs" />
     <Compile Include="Controllers\RequisitoDatoesController.cs" />
     <Compile Include="Controllers\RequisitoServicioTramitesController.cs" />
     <Compile Include="Controllers\RequisitoTramiteDatoesController.cs" />
@@ -202,10 +204,12 @@
     <Compile Include="Models\CuentaUsuario.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\InfoTramiteConsultado.cs" />
+    <Compile Include="Models\Institucion.cs" />
     <Compile Include="Models\Instituciones.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MostrarRequisitoServicioTD.cs" />
     <Compile Include="Models\MostrarRequisitoTramiteDato.cs" />
+    <Compile Include="Models\PeticionDato.cs" />
     <Compile Include="Models\RequisitoDato.cs" />
     <Compile Include="Models\RequisitoServicioTramite.cs" />
     <Compile Include="Models\RequisitoTramiteDato.cs" />
@@ -213,7 +217,17 @@
     <Compile Include="Models\TipoServicio.cs" />
     <Compile Include="Models\TipoTramite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Web References\PINTAE_Service1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -225,6 +239,10 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -237,6 +255,20 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Web References\PINTAE_Service1\Peticion.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\PINTAE_Service1\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\ConsultaTramites\ConsultaPorCedula.cshtml" />
+    <Content Include="Views\ConsultaTramites\ViewTramites.cshtml" />
+    <Content Include="Views\ConsultaTramites\InfoTramite.cshtml" />
+    <Content Include="Views\Peticiones\ConsultaPeticiones.cshtml" />
+    <Content Include="Views\Peticiones\ResponderPeticion.cshtml" />
+    <Content Include="Views\Peticiones\VerSolicitudes.cshtml" />
+    <None Include="Web References\PINTAE_Service1\Service1.disco" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -313,6 +345,28 @@
     <Content Include="Views\MostrarRequisitoServicioTD\Index.cshtml" />
     <Content Include="Views\MostrarRequisitoServicioTD\Mostrar.cshtml" />
     <Content Include="Views\CuentaUsuario\Index.cshtml" />
+    <None Include="Web References\PINTAE_Service1\Service1.wsdl" />
+    <None Include="Web References\PINTAE_Service1\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\PINTAE_Service1\Service10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\PINTAE_Service1\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\PINTAE_Service1\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Web References\PINTAE_Service1\TipoDato.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\PINTAE_Service1\TipoTramite.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\PINTAE_Service1\TramiteRealizado.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -327,6 +381,25 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:51140/Service1.svc">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\PINTAE_Service1\</RelPath>
+      <UpdateFromURL>http://localhost:51140/Service1.svc</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Proyecto_1_0_PINTAE_Service1_Service1</CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

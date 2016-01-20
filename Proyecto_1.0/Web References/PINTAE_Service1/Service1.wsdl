@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:51140/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:51140/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:51140/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Services_Pintae" />
+      <xsd:import schemaLocation="http://localhost:51140/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_ConsultaTramitesCiudadano_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaTramitesCiudadano" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ConsultaTramitesCiudadano_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaTramitesCiudadanoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ConsultaTramitesPorCedulaJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaTramitesPorCedulaJson" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ConsultaTramitesPorCedulaJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaTramitesPorCedulaJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ConsultaTramitePorIdJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaTramitePorIdJson" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ConsultaTramitePorIdJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaTramitePorIdJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllTipoTramites_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTipoTramites" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllTipoTramites_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTipoTramitesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllTipoTramitesJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTipoTramitesJson" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllTipoTramitesJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTipoTramitesJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetRequisitosPorIdTramite_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequisitosPorIdTramite" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetRequisitosPorIdTramite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequisitosPorIdTramiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetRequisitosPorIdTramiteJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequisitosPorIdTramiteJson" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetRequisitosPorIdTramiteJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequisitosPorIdTramiteJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SolicitarTramite_InputMessage">
+    <wsdl:part name="parameters" element="tns:SolicitarTramite" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SolicitarTramite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SolicitarTramiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ConsultarPeticiones_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPeticiones" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ConsultarPeticiones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPeticionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ConsultarPeticionesJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPeticionesJson" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ConsultarPeticionesJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPeticionesJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EntregarDato_InputMessage">
+    <wsdl:part name="parameters" element="tns:EntregarDato" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EntregarDato_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EntregarDatoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetNombreCatalogoTipoDato_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNombreCatalogoTipoDato" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetNombreCatalogoTipoDato_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNombreCatalogoTipoDatoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CallProcEntregarDato_InputMessage">
+    <wsdl:part name="parameters" element="tns:CallProcEntregarDato" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CallProcEntregarDato_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CallProcEntregarDatoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetServiciosPorInstitucionId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiciosPorInstitucionId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetServiciosPorInstitucionId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiciosPorInstitucionIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="ConsultaTramitesCiudadano">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ConsultaTramitesCiudadano" message="tns:IService1_ConsultaTramitesCiudadano_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ConsultaTramitesCiudadanoResponse" message="tns:IService1_ConsultaTramitesCiudadano_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTramitesPorCedulaJson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ConsultaTramitesPorCedulaJson" message="tns:IService1_ConsultaTramitesPorCedulaJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ConsultaTramitesPorCedulaJsonResponse" message="tns:IService1_ConsultaTramitesPorCedulaJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTramitePorIdJson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ConsultaTramitePorIdJson" message="tns:IService1_ConsultaTramitePorIdJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ConsultaTramitePorIdJsonResponse" message="tns:IService1_ConsultaTramitePorIdJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTipoTramites">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllTipoTramites" message="tns:IService1_GetAllTipoTramites_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllTipoTramitesResponse" message="tns:IService1_GetAllTipoTramites_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTipoTramitesJson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllTipoTramitesJson" message="tns:IService1_GetAllTipoTramitesJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllTipoTramitesJsonResponse" message="tns:IService1_GetAllTipoTramitesJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRequisitosPorIdTramite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetRequisitosPorIdTramite" message="tns:IService1_GetRequisitosPorIdTramite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetRequisitosPorIdTramiteResponse" message="tns:IService1_GetRequisitosPorIdTramite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRequisitosPorIdTramiteJson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetRequisitosPorIdTramiteJson" message="tns:IService1_GetRequisitosPorIdTramiteJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetRequisitosPorIdTramiteJsonResponse" message="tns:IService1_GetRequisitosPorIdTramiteJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitarTramite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SolicitarTramite" message="tns:IService1_SolicitarTramite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SolicitarTramiteResponse" message="tns:IService1_SolicitarTramite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPeticiones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ConsultarPeticiones" message="tns:IService1_ConsultarPeticiones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ConsultarPeticionesResponse" message="tns:IService1_ConsultarPeticiones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPeticionesJson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ConsultarPeticionesJson" message="tns:IService1_ConsultarPeticionesJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ConsultarPeticionesJsonResponse" message="tns:IService1_ConsultarPeticionesJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EntregarDato">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EntregarDato" message="tns:IService1_EntregarDato_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EntregarDatoResponse" message="tns:IService1_EntregarDato_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNombreCatalogoTipoDato">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetNombreCatalogoTipoDato" message="tns:IService1_GetNombreCatalogoTipoDato_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetNombreCatalogoTipoDatoResponse" message="tns:IService1_GetNombreCatalogoTipoDato_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CallProcEntregarDato">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CallProcEntregarDato" message="tns:IService1_CallProcEntregarDato_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CallProcEntregarDatoResponse" message="tns:IService1_CallProcEntregarDato_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiciosPorInstitucionId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetServiciosPorInstitucionId" message="tns:IService1_GetServiciosPorInstitucionId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetServiciosPorInstitucionIdResponse" message="tns:IService1_GetServiciosPorInstitucionId_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultaTramitesCiudadano">
+      <soap:operation soapAction="http://tempuri.org/IService1/ConsultaTramitesCiudadano" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTramitesPorCedulaJson">
+      <soap:operation soapAction="http://tempuri.org/IService1/ConsultaTramitesPorCedulaJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTramitePorIdJson">
+      <soap:operation soapAction="http://tempuri.org/IService1/ConsultaTramitePorIdJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTipoTramites">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllTipoTramites" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTipoTramitesJson">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllTipoTramitesJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequisitosPorIdTramite">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetRequisitosPorIdTramite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequisitosPorIdTramiteJson">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetRequisitosPorIdTramiteJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitarTramite">
+      <soap:operation soapAction="http://tempuri.org/IService1/SolicitarTramite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPeticiones">
+      <soap:operation soapAction="http://tempuri.org/IService1/ConsultarPeticiones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPeticionesJson">
+      <soap:operation soapAction="http://tempuri.org/IService1/ConsultarPeticionesJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EntregarDato">
+      <soap:operation soapAction="http://tempuri.org/IService1/EntregarDato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNombreCatalogoTipoDato">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetNombreCatalogoTipoDato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallProcEntregarDato">
+      <soap:operation soapAction="http://tempuri.org/IService1/CallProcEntregarDato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiciosPorInstitucionId">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetServiciosPorInstitucionId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:51140/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
