@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Trámites";
+}
+
+<h2>Trámites del ciudadano consultado.</h2>
+@if (ViewBag.TramitesCiudadano != null)
+{
+    foreach (Proyecto_1._0.PINTAE_Service1.TramiteRealizado tramite in ViewBag.TramitesCiudadano)
+    {
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <b>Nombre del trámite: </b>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => tramite.Nombre_tramite)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Fecha de solicitud: </b>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => tramite.Fecha_solicitud)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Estado: </b>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => tramite.Estado)
+                    </td>
+                </tr>
+            </table>
+            @Html.ActionLink(
+                  "Ver",
+                  "InfoTramite",
+                  "ConsultaTramites",
+                  new { id_tramite_realizado = tramite.Id_tramite },
+                  null)
+        </div>
+
+    }
+}
+else if ((int)ViewBag.Error == 2)
+{<li style="color:red; font-size:medium;"><b>No hay trámites para la cédula consultada.</b></li>}
+else if ((int)ViewBag.Error == 1)
+{<li style="color:red; font-size:medium;"><b>Error de conexión, inténtelo más tarde.</b></li>}
+
+
+
+

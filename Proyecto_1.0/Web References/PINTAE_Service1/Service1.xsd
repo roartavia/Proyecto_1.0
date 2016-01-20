@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:51140/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Services_Pintae" />
+  <xs:import schemaLocation="http://localhost:51140/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="ConsultaTramitesCiudadano">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cedula" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaTramitesCiudadanoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Services_Pintae" minOccurs="0" name="ConsultaTramitesCiudadanoResult" nillable="true" type="q1:ArrayOfTramiteRealizado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaTramitesPorCedulaJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cedula" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaTramitesPorCedulaJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConsultaTramitesPorCedulaJsonResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaTramitePorIdJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaTramitePorIdJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConsultaTramitePorIdJsonResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllTipoTramites">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllTipoTramitesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Services_Pintae" minOccurs="0" name="GetAllTipoTramitesResult" nillable="true" type="q2:ArrayOfTipoTramite" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllTipoTramitesJson">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllTipoTramitesJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAllTipoTramitesJsonResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRequisitosPorIdTramite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_tramite" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRequisitosPorIdTramiteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Services_Pintae" minOccurs="0" name="GetRequisitosPorIdTramiteResult" nillable="true" type="q3:ArrayOfTipoDato" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRequisitosPorIdTramiteJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_tramite" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRequisitosPorIdTramiteJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRequisitosPorIdTramiteJsonResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SolicitarTramite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_tramite" type="xs:int" />
+        <xs:element minOccurs="0" name="cedula" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SolicitarTramiteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SolicitarTramiteResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPeticiones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_institucion" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPeticionesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Services_Pintae" minOccurs="0" name="ConsultarPeticionesResult" nillable="true" type="q4:ArrayOfPeticion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPeticionesJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_institucion" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPeticionesJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConsultarPeticionesJsonResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EntregarDato">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_tipo_dato" type="xs:int" />
+        <xs:element minOccurs="0" name="id_tramite_solicitado" type="xs:int" />
+        <xs:element minOccurs="0" name="valor" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="cedula" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EntregarDatoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EntregarDatoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNombreCatalogoTipoDato">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_tipo_dato" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNombreCatalogoTipoDatoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNombreCatalogoTipoDatoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CallProcEntregarDato">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_tipo_dato" type="xs:int" />
+        <xs:element minOccurs="0" name="id_tramite_solicitado" type="xs:int" />
+        <xs:element minOccurs="0" name="valor" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="cedula" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CallProcEntregarDatoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CallProcEntregarDatoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiciosPorInstitucionId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_institucion" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiciosPorInstitucionIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetServiciosPorInstitucionIdResult" nillable="true" type="q5:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
